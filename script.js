@@ -53,3 +53,371 @@ if(animal = 'cow'){
 }else{
     console.log("Hey You're not a cow.");
 }
+
+//E. Driver's Ed
+
+let driverAge = 23;
+
+if(driverAge >= 16){
+    console.log('Here are the keys!');
+}else{
+    console.log("Sorry you're too young.");
+}
+
+//II. Loops
+
+//A. The basics
+
+for(let i = 0; i <= 10; i++){
+    console.log(i);
+}
+
+//B. Get even
+
+for(let i = 1; i <= 100; i++){
+    if(!(i % 2)){
+        console.log(`${i} is an even number`);
+    }else{
+        console.log(i);
+    }
+}
+
+//C. Give me Five
+
+for(let i = 0; i <= 100 ; i++){
+    if(i % 5 === 0 && i % 3 === 0){
+        console.log(`I found a ${i}. High five!`);
+        console.log(`I found a ${i}. Three is a crowd`);
+
+    }else if(i % 5 === 0){
+        console.log(`I found a ${i}. High five!`);
+    }else if(i % 3 === 0){
+        console.log(`I found a ${i}. Three is a crowd`);
+    }
+}
+
+//D. Savings account
+
+let bankAccount = 0;
+let bonus = 0
+for(let i = 1; i <= 10; i++){
+    bankAccount += i;
+}
+for(let i = 1; i <= 100; i++){
+    bonus += i;
+
+}
+bankAccount = bankAccount + (bonus*2);
+// console.log(bankAccount)
+
+
+//III. Arrays & Control flow
+
+//A. Talk about it:
+
+/*
+-What are the things in an array called? A. Elements in an Array
+-Do Arrays guarantee those things will be in order? A. Yes unless you modify the array
+-What real-life thing could you model with an array? A. Admissions list into a university or any institution.
+
+ */
+
+//B. Easy Does It
+
+const quotes = [ "The purpose of our lives is to be happy.","Life is what happens when you're busy making other plans.","Get busy living or get busy dying."];
+
+//C. Accessing elements
+
+const randomThings = [1, 10, "Hello", true];
+// use the array index which starts at zero.
+randomThings[0];
+randomThings[2] = "World";
+console.log(randomThings);
+
+//D. Change values
+
+const ourClass = ["Salty", "Zoom", "Sardine", "Slack", "Github"];
+// use the array index which starts at zero.
+ourClass[2];
+ourClass[4] = 'Octocat';
+ourClass.push('Cloud city');
+
+
+//E. Mix It Up
+
+const myArray = [5, 10, 500, 20];
+myArray.push('Aegon','Mr beast');
+myArray.splice(4,1);
+myArray.unshift('Bob Marley');
+myArray.pop();
+myArray.reverse();
+//Did you mutate the array? What does mutate mean? Did the .reverse()method return anything? A. Yes the array is mutated. "MUTATE" change in form or design. it returned the reverse of the array.
+
+
+//F. Biggie Smalls
+
+let number = 200;
+if(number < 100){
+    console.log('Little number');
+}else{
+    console.log('Big number');
+}
+
+//G. Monkey in the Middle
+
+let int = 7;
+if(int < 5 ){
+    console.log('Little number');
+}else if(int > 10){
+    console.log('Big number');
+}else{
+    console.log('Monkey');
+}
+
+//H. What's in Your Closet?
+
+const kristynsCloset = [
+    "left shoe",
+    "cowboy boots",
+    "right sock",
+    "Per Scholas hoodie",
+    "green pants",
+    "yellow knit hat",
+    "marshmallow peeps"
+  ];
+  
+  // Thom's closet is more complicated. Check out this nested data structure!!
+  const thomsCloset = [
+    [
+      // These are Thom's shirts
+      "grey button-up",
+      "dark grey button-up",
+      "light blue button-up",
+      "blue button-up",
+    ],[
+      // These are Thom's pants
+      "grey jeans",
+      "jeans",
+      "PJs"
+    ],[
+      // Thom's accessories
+      "wool mittens",
+      "wool scarf",
+      "raybans"
+    ]
+  ];
+  console.log(`Kristyn is rocking that ${kristynsCloset[2]} today!`);
+  kristynsCloset.splice(6,0,'raybans');
+  kristynsCloset[5] = 'stained knit hat';
+  let thomsShirt = thomsCloset[0][0];
+  let thomsPants = thomsCloset[1][0];
+  let thomsAccessory = thomsCloset[2][2];
+  console.log(`Thom is looking elegant in a ${thomsShirt}, ${thomsPants} and ${thomsAccessory}`);
+  thomsCloset[1][2] = 'Footie Pajamas';
+  
+
+  //IV. Functions
+
+  //A. printGreeting
+
+  const printGreeting = (name) =>{
+return(`Hello there, ${name}!`);
+  }
+
+
+console.log(printGreeting('Slimer'));
+
+//B. printCool
+
+const printCool = (name) =>{
+    return(`${name} is cool`)
+}
+
+console.log(printCool("Captain Reynolds"));
+
+//C. calculateCube
+
+const calculateCube = (number) =>{
+    return(number * number * number);
+}
+
+console.log(calculateCube(5));
+
+//D. isVowel
+
+const isVowel = (vowel) =>{
+    let vowels = ['a','e','i','o','u'];
+    return vowels.includes(vowel.toLowerCase())
+}
+
+console.log(isVowel("a"));
+
+//E.getTwoLengths
+
+const getTwoLengths = (str1,str2) =>{
+return [str1.length, str2.length];
+}
+
+console.log(getTwoLengths("Hank", "Hippopopalous"));
+
+//F. getMultipleLengths
+
+const getMultipleLengths = (string) => {
+    let tempLength = [];
+ for(let i = 0; i < string.length; i++){
+    
+    let value = string[i];
+    tempLength.push(value.length);
+    
+ }
+ return tempLength
+
+}
+
+console.log(getMultipleLengths(["hello", "what", "is", "up", "dude"]));
+
+//G. maxOfThree
+
+const maxOfThree = (a,b,c) =>{
+    if(a>b && a>c){
+        return a;
+    }else if(b>a && b>c){
+        return b;
+    }else{
+        return c;
+    }
+}
+
+console.log(maxOfThree(6, 9, 1));
+
+//H. printLongestWord
+
+const printLongestWord = (words) =>{
+let wordIndex = 0;
+let wordLength = 0;
+for(let i = 0; i< words.length; i++){
+    if(words[i].length > wordLength){
+        wordLength = words[i].length;
+        wordIndex = i;
+    }
+}
+return words[wordIndex];
+}
+
+console.log(printLongestWord(["BoJack", "Princess", "Diane", "a", "Max", "Peanutbutter", "big", "Todd"]));
+
+
+
+//V. Objects
+
+//A. Make a user object
+
+let user = {
+    name: 'John',
+    email : 'jjohn@gmail.com',
+    age : 47,
+    purchased : []
+}
+
+
+//B. Update the user
+
+user.email = "johnsmith@yahoo.com";
+user.age++;
+
+//C. Adding keys and values
+
+user.location = "Dallas";
+
+//D. Shopaholic!
+
+user.purchased.push('carbohydrates',"peace of mind","Merino jodhpurs");
+
+console.log(user.purchased[2]);
+
+
+//E. Object-within-object
+
+user.friend = {
+    name: 'james',
+    age: 37,
+    location: 'New York',
+    purchased: []
+}
+
+console.log(user.friend.name);
+console.log(user.friend.location);
+user.friend.age = 55;
+user.friend.purchased.push("The One Ring","A latte");
+console.log(user.friend.purchased[1]);
+
+//F. Loops
+
+for(let element in user.purchased){
+    console.log(user.purchased[element]);
+}
+for(let element in user.friend.purchased){
+    console.log(user.friend.purchased[element]);
+}
+
+
+//G. Functions can operate on objects
+
+const updateUser = () => {
+    user.age++;
+    user.name.toUpperCase();
+}
+
+const oldAndLound = function(person){
+    person.name.toUpperCase();
+    person.age++;
+}
+oldAndLound(user);
+
+
+
+
+//Cat Combinator
+
+
+//1. Mama cat
+
+const cat1 = {
+    name: "Minuu",
+    breed: "American Shorthair", 
+    age: 2
+}
+
+console.log(cat1.age);
+console.log(cat1.breed);
+
+
+//2. Papa cat
+
+const cat2 = {
+    name: "pinuu",
+    breed: "American Curl", 
+    age: 3
+}
+
+
+//3. Combine Cats!
+
+const combineCats = (mama,papa) =>{
+    // console.log(mama);
+    // console.log(papa);
+    let combined = {};
+    combined.name = mama.name + papa.name;
+    combined.age = 1;
+    combined.breed = mama.breed + '-' + papa.breed;
+    return combined;
+
+}
+
+console.log(combineCats(cat1,cat2));
+
+//4. Cat brain bender
+
+console.log(combineCats(combineCats(cat1, cat2), combineCats(cat1, cat2)));
+
+console.log(combineCats(combineCats(combineCats(cat1, cat2), combineCats(cat1, cat2)),combineCats(combineCats(cat1, cat2), combineCats(cat1, cat2))));
