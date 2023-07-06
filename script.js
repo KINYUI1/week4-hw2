@@ -107,8 +107,8 @@ for(let i = 1; i <= 100; i++){
     bonus += i;
 
 }
-bankAccount = bankAccount + (bonus*2);
-// console.log(bankAccount)
+bankAccount = (bonus*2);
+console.log(bankAccount)
 
 
 //III. Arrays & Control flow
